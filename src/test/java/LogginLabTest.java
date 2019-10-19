@@ -1,3 +1,8 @@
+import org.junit.Assert;
+import org.junit.Test;
+
+
+import java.lang.annotation.Target;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -30,5 +35,11 @@ public class LogginLabTest {
                 assertFalse(lab.thresholdExceeds(i));
             }
         }
+    }
+
+    @Test
+    public void testthresholdReached() {
+        LogginLab lab1 = new LogginLab();
+        Assert.assertEquals(true, lab1.thresholdReached( 30));
     }
 }
